@@ -3,5 +3,6 @@ R-base64enc
 R-crosstalk
 R-htmltools
 R-htmlwidgets
+R-jsonlite
 R-sp
 R-viridis

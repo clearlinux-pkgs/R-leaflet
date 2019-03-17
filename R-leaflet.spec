@@ -4,30 +4,25 @@
 #
 Name     : R-leaflet
 Version  : 2.0.2
-Release  : 15
+Release  : 16
 URL      : https://cran.r-project.org/src/contrib/leaflet_2.0.2.tar.gz
 Source0  : https://cran.r-project.org/src/contrib/leaflet_2.0.2.tar.gz
 Summary  : Create Interactive Web Maps with the JavaScript 'Leaflet'
 Group    : Development/Tools
 License  : BSD-2-Clause BSD-3-Clause GPL-3.0 MIT
-Requires: R-base64enc
-Requires: R-crosstalk
-Requires: R-htmltools
-Requires: R-htmlwidgets
-Requires: R-sp
-Requires: R-viridis
+Requires: R-jsonlite
 BuildRequires : R-base64enc
 BuildRequires : R-crosstalk
 BuildRequires : R-htmltools
 BuildRequires : R-htmlwidgets
+BuildRequires : R-jsonlite
 BuildRequires : R-sp
 BuildRequires : R-viridis
 BuildRequires : buildreq-R
 
 %description
-JavaScript library and the 'htmlwidgets' package. These maps can be used
-    directly from the R console, from 'RStudio', in Shiny applications and R Markdown
-    documents.
+# An R Interface to Leaflet Maps
+[![Build Status](https://travis-ci.org/rstudio/leaflet.svg?branch=master)](https://travis-ci.org/rstudio/leaflet)
 
 %prep
 %setup -q -c -n leaflet
@@ -37,11 +32,11 @@ export http_proxy=http://127.0.0.1:9/
 export https_proxy=http://127.0.0.1:9/
 export no_proxy=localhost,127.0.0.1,0.0.0.0
 export LANG=C
-export SOURCE_DATE_EPOCH=1535815841
+export SOURCE_DATE_EPOCH=1552853774
 
 %install
+export SOURCE_DATE_EPOCH=1552853774
 rm -rf %{buildroot}
-export SOURCE_DATE_EPOCH=1535815841
 export LANG=C
 export CFLAGS="$CFLAGS -O3 -flto -fno-semantic-interposition "
 export FCFLAGS="$CFLAGS -O3 -flto -fno-semantic-interposition "
@@ -76,8 +71,7 @@ export http_proxy=http://127.0.0.1:9/
 export https_proxy=http://127.0.0.1:9/
 export no_proxy=localhost,127.0.0.1,0.0.0.0
 export _R_CHECK_FORCE_SUGGESTS_=false
-R CMD check --no-manual --no-examples --no-codoc -l %{buildroot}/usr/lib64/R/library leaflet|| : 
-cp ~/.stash/* %{buildroot}/usr/lib64/R/library/*/libs/ || :
+R CMD check --no-manual --no-examples --no-codoc  leaflet || :
 
 
 %files
@@ -224,3 +218,14 @@ cp ~/.stash/* %{buildroot}/usr/lib64/R/library/*/libs/ || :
 /usr/lib64/R/library/leaflet/legacy/www/leaflet-src.js
 /usr/lib64/R/library/leaflet/legacy/www/leaflet.css
 /usr/lib64/R/library/leaflet/legacy/www/leaflet.js
+/usr/lib64/R/library/leaflet/tests/test-all.R
+/usr/lib64/R/library/leaflet/tests/testit/test-colors.R
+/usr/lib64/R/library/leaflet/tests/testit/test-icon.R
+/usr/lib64/R/library/leaflet/tests/testit/test-legend.R
+/usr/lib64/R/library/leaflet/tests/testit/test-measure.R
+/usr/lib64/R/library/leaflet/tests/testit/test-remote.R
+/usr/lib64/R/library/leaflet/tests/testit/test-utils.R
+/usr/lib64/R/library/leaflet/tests/testthat.R
+/usr/lib64/R/library/leaflet/tests/testthat/test-colors.R
+/usr/lib64/R/library/leaflet/tests/testthat/test-normalize-2.R
+/usr/lib64/R/library/leaflet/tests/testthat/test-normalize.R
