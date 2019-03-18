@@ -4,7 +4,7 @@
 #
 Name     : R-leaflet
 Version  : 2.0.2
-Release  : 16
+Release  : 17
 URL      : https://cran.r-project.org/src/contrib/leaflet_2.0.2.tar.gz
 Source0  : https://cran.r-project.org/src/contrib/leaflet_2.0.2.tar.gz
 Summary  : Create Interactive Web Maps with the JavaScript 'Leaflet'
