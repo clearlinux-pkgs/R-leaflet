@@ -1,8 +1,11 @@
 2.0.2
+R-RColorBrewer
 R-base64enc
 R-crosstalk
 R-htmltools
 R-htmlwidgets
 R-jsonlite
+R-png
+R-raster
 R-sp
 R-viridis
