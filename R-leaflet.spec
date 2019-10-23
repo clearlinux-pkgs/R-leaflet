@@ -4,7 +4,7 @@
 #
 Name     : R-leaflet
 Version  : 2.0.2
-Release  : 24
+Release  : 25
 URL      : https://cran.r-project.org/src/contrib/leaflet_2.0.2.tar.gz
 Source0  : https://cran.r-project.org/src/contrib/leaflet_2.0.2.tar.gz
 Summary  : Create Interactive Web Maps with the JavaScript 'Leaflet'
@@ -17,7 +17,6 @@ Requires: R-htmltools
 Requires: R-htmlwidgets
 Requires: R-magrittr
 Requires: R-markdown
-Requires: R-munsell
 Requires: R-png
 Requires: R-raster
 Requires: R-scales
@@ -37,11 +36,11 @@ BuildRequires : R-scales
 BuildRequires : R-sp
 BuildRequires : R-viridis
 BuildRequires : buildreq-R
+BuildRequires : util-linux
 
 %description
-JavaScript library and the 'htmlwidgets' package. These maps can be used
-    directly from the R console, from 'RStudio', in Shiny applications and R Markdown
-    documents.
+# An R Interface to Leaflet Maps
+[![Build Status](https://travis-ci.org/rstudio/leaflet.svg?branch=master)](https://travis-ci.org/rstudio/leaflet)
 
 %prep
 %setup -q -c -n leaflet
@@ -51,10 +50,10 @@ export http_proxy=http://127.0.0.1:9/
 export https_proxy=http://127.0.0.1:9/
 export no_proxy=localhost,127.0.0.1,0.0.0.0
 export LANG=C.UTF-8
-export SOURCE_DATE_EPOCH=1562202484
+export SOURCE_DATE_EPOCH=1571854008
 
 %install
-export SOURCE_DATE_EPOCH=1562202484
+export SOURCE_DATE_EPOCH=1571854008
 rm -rf %{buildroot}
 export LANG=C.UTF-8
 export CFLAGS="$CFLAGS -O3 -flto -fno-semantic-interposition "
