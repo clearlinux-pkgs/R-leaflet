@@ -4,7 +4,7 @@
 #
 Name     : R-leaflet
 Version  : 2.0.3
-Release  : 29
+Release  : 30
 URL      : https://cran.r-project.org/src/contrib/leaflet_2.0.3.tar.gz
 Source0  : https://cran.r-project.org/src/contrib/leaflet_2.0.3.tar.gz
 Summary  : Create Interactive Web Maps with the JavaScript 'Leaflet'
@@ -45,21 +45,22 @@ JavaScript library and the 'htmlwidgets' package. These maps can be used
 
 %prep
 %setup -q -c -n leaflet
+cd %{_builddir}/leaflet
 
 %build
 export http_proxy=http://127.0.0.1:9/
 export https_proxy=http://127.0.0.1:9/
 export no_proxy=localhost,127.0.0.1,0.0.0.0
 export LANG=C.UTF-8
-export SOURCE_DATE_EPOCH=1574319410
+export SOURCE_DATE_EPOCH=1589827609
 
 %install
-export SOURCE_DATE_EPOCH=1574319410
+export SOURCE_DATE_EPOCH=1589827609
 rm -rf %{buildroot}
 export LANG=C.UTF-8
 export CFLAGS="$CFLAGS -O3 -flto -fno-semantic-interposition "
-export FCFLAGS="$CFLAGS -O3 -flto -fno-semantic-interposition "
-export FFLAGS="$CFLAGS -O3 -flto -fno-semantic-interposition "
+export FCFLAGS="$FFLAGS -O3 -flto -fno-semantic-interposition "
+export FFLAGS="$FFLAGS -O3 -flto -fno-semantic-interposition "
 export CXXFLAGS="$CXXFLAGS -O3 -flto -fno-semantic-interposition "
 export AR=gcc-ar
 export RANLIB=gcc-ranlib
